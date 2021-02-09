@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;400;700&family=Open+Sans:wght@300;400;700;800&family=Playfair+Display:wght@400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+html,
+body {
+	height: 100%;
+	overflow: hidden;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+h1 {
+	font-family: 'Playfair Display';
+	font-size: 3rem;
+	font-weight: 800;
+	margin-bottom: 4vh;
+}
+
+.credits .label,
+p,
+.content a {
+	font-family: 'Karla';
+	font-weight: 400;
+	width: clamp(300px, 70vw, 900px);
+	text-align: center;
+	margin: 7vh auto;
+	color: rgba(255, 255, 255, .9);
+}
+
+p,
+.icons,
+figure,
+.chartContainer,
+.credits{
+	margin: 4vh auto;
+}
+
+h1, b {
+	color: #fff;
+}
+
+.btn {
+	color: #fff;
+	display: block;
+	width: 45px;
+	height: 45px;
+	text-align: center;
+	font-size: 1.1rem;
+	position: relative;
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+
+}
+
+.btn::after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	border: 1px solid #fff;
+	display: block;
+	transform: rotate(45deg) translate(-50%, -50%);
+	transition: .4s;
+}
+
+.btn:hover::after {
+	background-color: rgba(255, 255, 255, .1);
+}
+
+.btn:hover {
+	transform: scale(1.01);
+}
+
+.btn:active {
+	transform: scale(.99);
+}
+
+
+.icons,
+.row {
+	display: flex;
+	justify-content: space-between;
+	gap: clamp(30px, 5vw, 100px);
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.icon {
+	position: relative;
+}
+
+.icon i{
+	color: #fff;
+	display: block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	font-size: .8rem;
+	position: relative;
+	cursor: pointer;
+}
+
+.icon i::after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	border: 1px solid #fff;
+	display: block;
+	transform: rotate(45deg) translate(-50%, -50%);
+	transition: .3s cubic-bezier(.5, 0, .5, 1);
+}
+
+figure figcaption,
+.icon p {
+	font-family: 'Playfair Display';
+	font-weight: 800;
+	font-size: .95rem;
+	color: #fff;
+	text-align: center;
+	margin-top: 10px;
+	text-transform: capitalize;
+}
+
+.icon p {
+	opacity: 0;
+	transition: .2s;
+	position: absolute;
+	width: 150px;
+	left: calc((-150px) / 2 + (30px / 2));
+	margin: 0;
+	top: 45px;
+	word-wrap: normal;
+}
+
+.icon:hover p {
+	opacity: 1;
+	top: 35px;
+}
+
+.icon:hover i::after {
+	background-color: rgba(255, 255, 255, .1);
+}
+
+.content .display {
+	transform: translateY(0)!important;
+	opacity: 1!important;
+}
+
+figure {
+	width: fit-content;
+}
+
+figure img {
+	max-width: 20vw;
+	max-height: 20vh;
+}
+
+
+.chartContainer {
+	background-color: transparent;
+	border: 1px solid #fff;
+	height: 30px;
+	width: 500px;
+	display: block;
+	padding: 3px;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.chartContainer .chart {
+	width: attr('data-percent');
+	height: 100%;
+	background-color: rgba(255, 255, 255, .5);
+	border: 1px solid rgba(255, 255, 255, .8);
+	color: #000;
+	font-family: 'Karla';
+	font-size: .8rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	box-sizing: border-box;
+	position: relative;
+	cursor: pointer;
+	transition: .3s cubic-bezier(.5, 0, .5, 1);
+}
+
+.chartContainer .chart::after {
+	content: attr(data-percent);
+	position: absolute;
+	top: 0;
+	color: #fff;
+	opacity: 0;
+	transition: .3s cubic-bezier(.5, 0, .5, 1);
+}
+
+.chartContainer .chart:hover::after {
+	top: -25px;
+	opacity: 1;
+}
+
+.chartContainer .chart:hover {
+	background-color: rgba(255, 255, 255, .6);
+}
+
+.credits {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 50px 30px;
+}
+
+.credits .label {
+	text-align: right;
+	width: initial;
+	margin: initial;
+	font-weight: 400!important;
+}
+
+.credits .text{
+	text-align: left;
+}
+
+.credits .text a {
+	font-weight: 700!important;
+	text-decoration: none;
+	display: block;
+	width: fit-content;
+	margin: 0;
+	margin-bottom: 1em;
+}
