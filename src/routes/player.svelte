@@ -13,7 +13,7 @@
 	let playbackRate = 1;
 
 	onMount(() => {
-		episode = document.querySelector("audio");
+		episode = document.querySelector("audio#episode");
 
 		episode.addEventListener("canplay", (e) => {
 			duration = episode.duration;
@@ -65,8 +65,8 @@
 
 <h1>À vous de tester maintenant</h1>
 
-<div class="iphone">
-	<audio src="/lepuyduflood.mp3" bind:currentTime />
+<div class="iphone off">
+	<audio src="/lepuyduflood.mp3" bind:currentTime id="episode" />
 	<div class="flexrow">
 		<i class="fa fa-angle-down" />
 		<span class="name">FloodCast</span>
@@ -130,7 +130,7 @@
 
 	.iphone::before {
 		content: "";
-		height: 18px;
+		height: 4%;
 		width: 55%;
 		border-radius: 10px;
 		border-top-left-radius: 0;
@@ -182,6 +182,14 @@
 		outline: none;
 		cursor: pointer;
 		color: #fff;
+	}
+
+	.iphone .flexrow.buttons {
+		display: grid;
+		grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
 	}
 
 	.iphone .player .playBtn {

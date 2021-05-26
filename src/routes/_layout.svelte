@@ -97,7 +97,6 @@
 		>
 			<i class="fa fa-expand" />
 		</button>
-		<Progress totalRoutes={routes.length} {i} />
 		<div class="content">
 			<slot />
 		</div>
@@ -119,7 +118,7 @@
 		padding: 0 clamp(100px, 9vw, 200px);
 		display: grid;
 		/* grid-template-rows: auto clamp(120px, 12vh, 200px); */
-		grid-template-rows: 10px auto clamp(120px, 12vh, 200px);
+		grid-template-rows: auto clamp(120px, 12vh, 200px);
 		height: 100%;
 	}
 

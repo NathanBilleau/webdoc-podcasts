@@ -10,7 +10,9 @@
 
 </style>
 
-
+<svelte:head>
+	<title>La création</title>
+</svelte:head>
 <h1>La création</h1>
 
 <p data-time={60 + 17}>
